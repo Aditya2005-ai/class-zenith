@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Users, BookOpen, Clock, Settings, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
+import SignAuthModal from "./SignAuthModal";
+
 
 const Index = () => {
   return (
@@ -11,13 +13,20 @@ const Index = () => {
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
+            {/* Left Side: Logo + Title */}
+            <div className="flex items-center gap-3">
+              {/* Logo */}
+              <img
+                src="image.png" // <-- place your logo image in public/logo.png or update path
+                alt="EduFlex Logo"
+                className="h-10 w-10 rounded-full object-cover"
+              />
             <div>
-              <h1 className="text-3xl font-bold text-foreground">EduScheduler</h1>
+              <h1 className="text-3xl font-bold text-foreground">EduFlex</h1>
               <p className="text-muted-foreground">Optimized Class Scheduling Platform</p>
             </div>
-            <Button asChild>
-              <Link to="/dashboard">Sign In</Link>
-            </Button>
+          </div>  
+            <SignAuthModal />
           </div>
         </div>
       </header>
@@ -48,111 +57,129 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h3 className="text-3xl font-bold text-center mb-12 text-foreground">Platform Features</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardHeader>
-                <Calendar className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Smart Scheduling</CardTitle>
-                <CardDescription>
-                  AI-powered timetable generation with conflict resolution and optimization
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Multiple optimization options</li>
-                  <li>• Constraint handling</li>
-                  <li>• Real-time conflict detection</li>
-                </ul>
-              </CardContent>
-            </Card>
+            
+            {/* Smart Scheduling */}
+            <Link to="/smart-scheduling">
+              <Card className="cursor-pointer hover:shadow-lg transition">
+                <CardHeader>
+                  <Calendar className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>Smart Scheduling</CardTitle>
+                  <CardDescription>
+                    AI-powered timetable generation with conflict resolution and optimization
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Multiple optimization options</li>
+                    <li>• Constraint handling</li>
+                    <li>• Real-time conflict detection</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card>
-              <CardHeader>
-                <Users className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Faculty Management</CardTitle>
-                <CardDescription>
-                  Comprehensive faculty workload and availability tracking
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Teaching load optimization</li>
-                  <li>• Leave management</li>
-                  <li>• Availability tracking</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Faculty Management */}
+            <Link to="/faculty-management">
+              <Card className="cursor-pointer hover:shadow-lg transition">
+                <CardHeader>
+                  <Users className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>Faculty Management</CardTitle>
+                  <CardDescription>
+                    Comprehensive faculty workload and availability tracking
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Teaching load optimization</li>
+                    <li>• Leave management</li>
+                    <li>• Availability tracking</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card>
-              <CardHeader>
-                <BookOpen className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Multi-Department</CardTitle>
-                <CardDescription>
-                  Support for multiple departments and programs simultaneously
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• UG & PG programs</li>
-                  <li>• Cross-department scheduling</li>
-                  <li>• Batch management</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Multi Department */}
+            <Link to="/multi-department">
+              <Card className="cursor-pointer hover:shadow-lg transition">
+                <CardHeader>
+                  <BookOpen className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>Multi-Department</CardTitle>
+                  <CardDescription>
+                    Support for multiple departments and programs simultaneously
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• UG & PG programs</li>
+                    <li>• Cross-department scheduling</li>
+                    <li>• Batch management</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card>
-              <CardHeader>
-                <Clock className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Resource Optimization</CardTitle>
-                <CardDescription>
-                  Maximize classroom and lab utilization efficiency
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Classroom allocation</li>
-                  <li>• Lab scheduling</li>
-                  <li>• Equipment management</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Resource Optimization */}
+            <Link to="/resource-optimization">
+              <Card className="cursor-pointer hover:shadow-lg transition">
+                <CardHeader>
+                  <Clock className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>Resource Optimization</CardTitle>
+                  <CardDescription>
+                    Maximize classroom and lab utilization efficiency
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Classroom allocation</li>
+                    <li>• Lab scheduling</li>
+                    <li>• Equipment management</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card>
-              <CardHeader>
-                <Settings className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Workflow Management</CardTitle>
-                <CardDescription>
-                  Review, approval, and modification workflows
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Multi-level approval</li>
-                  <li>• Change tracking</li>
-                  <li>• Notification system</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Workflow Management */}
+            <Link to="/workflow-management">
+              <Card className="cursor-pointer hover:shadow-lg transition">
+                <CardHeader>
+                  <Settings className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>Workflow Management</CardTitle>
+                  <CardDescription>
+                    Review, approval, and modification workflows
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Multi-level approval</li>
+                    <li>• Change tracking</li>
+                    <li>• Notification system</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card>
-              <CardHeader>
-                <BarChart3 className="h-10 w-10 text-primary mb-2" />
-                <CardTitle>Analytics & Reports</CardTitle>
-                <CardDescription>
-                  Comprehensive insights and performance metrics
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Utilization reports</li>
-                  <li>• Workload analysis</li>
-                  <li>• Performance tracking</li>
-                </ul>
-              </CardContent>
-            </Card>
+            {/* Analytics & Reports */}
+            <Link to="/analytics-reports">
+              <Card className="cursor-pointer hover:shadow-lg transition">
+                <CardHeader>
+                  <BarChart3 className="h-10 w-10 text-primary mb-2" />
+                  <CardTitle>Analytics & Reports</CardTitle>
+                  <CardDescription>
+                    Comprehensive insights and performance metrics
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Utilization reports</li>
+                    <li>• Workload analysis</li>
+                    <li>• Performance tracking</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
-
       {/* Current Status */}
       <section className="py-12 bg-muted/50">
         <div className="container mx-auto px-4">

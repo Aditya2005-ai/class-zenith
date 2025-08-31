@@ -19,8 +19,18 @@ const Dashboard = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold text-foreground">EduScheduler Dashboard</h1>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3">
+                {/* Logo */}
+                <img
+                  src="image.png" // <-- place your logo image in public/logo.png or update path
+                  alt="EduFlex Logo"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+                </div>
+              <h1 className="text-2xl font-bold text-foreground">EduFlex Dashboard</h1>
               <Badge variant="secondary">AY 2025-26 Odd Semester</Badge>
+            </div>
             </div>
             <div className="flex items-center gap-2">
               <Button variant="outline" size="sm">
