@@ -12,6 +12,10 @@ import MultiDepartment from "./pages/MultiDepartment";
 import ResourceOptimization from "./pages/ResourceOptimization"
 // import WorkflowManagement from "./pages/WorkflowManagement";
 import AnalyticsReports from "./pages/AnalyticsReports";
+import TimetableGenerator from "./pages/TimeTableGenerator";
+
+
+
 
 const queryClient = new QueryClient();
 
@@ -28,6 +32,7 @@ const App = () => (
           <Route path="/smart-scheduling" element={<SmartScheduling />} />
           <Route path="/multi-department" element={<MultiDepartment />} />
           <Route path="/resource-optimization" element={<ResourceOptimization />} />
+          <Route path="/timetable-generator" element={<TimetableGenerator />} />
           {/* <Route path="/workflow-management" element={<WorkflowManagement />} />  */}
           <Route path="/analytics-reports" element={<AnalyticsReports />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -1,73 +1,156 @@
-# Welcome to your Lovable project
 
-## Project info
+# 📘 EduFlex  
+**Smart Classroom & Timetable Scheduler**
 
-**URL**: https://lovable.dev/projects/1824cb41-c0e3-4c59-8aca-91eb69c25899
+---
 
-## How can I edit this code?
+## 🌟 Overview  
+EduFlex is an **AI-powered Smart Classroom & Timetable Scheduling platform** designed for higher education institutions. It helps administrators, faculty, and students overcome the inefficiencies of manual scheduling by providing **intelligent, automated, and optimized timetables** tailored to institutional needs.  
 
-There are several ways of editing your application.
+With the rise of **multidisciplinary curricula and NEP 2020**, traditional scheduling methods fall short in managing the complexities of real-time faculty availability, infrastructure constraints, elective choices, and student preferences. EduFlex solves this by combining **AI optimization** with **real-time conflict detection** to ensure seamless scheduling.  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1824cb41-c0e3-4c59-8aca-91eb69c25899) and start prompting.
+## 🚀 Key Features  
+✅ **AI-Powered Timetable Generation** – Generate optimized schedules within seconds  
+✅ **Conflict Detection** – Prevent clashes in faculty, rooms, and subjects in real time  
+✅ **Rescheduling Assistant** – Suggest alternative slots, rooms, and faculty adjustments  
+✅ **Multi-Department & Multi-Shift Support** – Handle UG, PG, electives, and lab schedules  
+✅ **Faculty & Classroom Management** – Track teaching load, availability, and leaves  
+✅ **Interactive Dashboard** – Intuitive UI for monitoring schedules and adjustments  
+✅ **Approval Workflow** – Allow competent authorities to review and approve schedules  
+✅ **Export & Sharing** – Download timetables in **PDF/Excel** or share instantly  
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🎯 Problem Statement  
+Higher education institutions often face challenges in efficient class scheduling due to:  
+- Limited infrastructure (classrooms/labs)  
+- Uneven faculty workload  
+- Overlapping departmental requirements  
+- Manual dependency on spreadsheets  
+- Poor resource utilization  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This leads to **frequent clashes, underutilization of rooms, and dissatisfaction among faculty & students**.  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+EduFlex addresses these challenges by providing **adaptive, optimized, and scalable timetable generation**.  
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🔑 Key Parameters Considered  
+EduFlex factors in multiple real-world variables, including:  
+- Number of classrooms & labs available  
+- Student batches & semester-wise subject allocation  
+- Maximum classes per day per student/faculty  
+- Teaching load norms per subject/week  
+- Faculty availability & average leave patterns  
+- Special fixed-slot classes (labs, electives, seminars)  
+- Student-friendly distribution of lectures  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🛠️ Tech Stack  
+**Frontend:** ⚡ React + TypeScript + TailwindCSS + ShadCN UI + Framer Motion  
+**Backend:** ⚙️ Node.js + Express + MongoDB (Atlas)  
+**AI Integration:** 🤖 Google Gemini API for timetable optimization  
+**Other Tools:**  
+- Vite for blazing-fast dev environment  
+- Lucide React for icons  
+- CSV/Excel/PDF export utilities  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## 📂 Project Structure  
+```
+EduFlex/
+├── backend/                 # Node.js backend services
+│   ├── src/                 # Backend source code
+│   ├── package.json         
+│   └── Dockerfile           
+│
+├── src/                     # Frontend source code
+│   ├── components/          
+│   │   ├── ClassroomManager.tsx
+│   │   ├── FacultyManager.tsx
+│   │   ├── ScheduleOptimizer.tsx
+│   │   ├── TimetableGrid.tsx
+│   │   └── ui/              # ShadCN UI components
+│   │
+│   ├── pages/               # Feature Pages
+│   │   ├── AnalyticsReports.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── FacultyManagement.tsx
+│   │   ├── SmartScheduling.tsx
+│   │   ├── TimetableGenerator.tsx
+│   │   └── WorkflowManagement.tsx
+│   │
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── public/                  # Static assets
+├── package.json
+├── tailwind.config.ts
+└── README.md
+```
+
+---
+
+## 📊 Expected Impact  
+- ⏳ **80% reduction in timetable preparation time**  
+- ✅ **Zero scheduling conflicts** with AI-powered conflict detection  
+- 📈 **Maximized utilization** of classrooms and labs  
+- ⚖️ **Balanced workload** for faculty  
+- 😊 **Happier students & faculty** with fair and flexible schedules  
+
+---
+
+## 🖥️ Installation & Setup  
+
+### 1️⃣ Clone the Repository  
+```bash
+git clone https://github.com/your-username/EduFlex.git
+cd EduFlex
+```
+
+### 2️⃣ Install Dependencies  
+```bash
+npm install   # or yarn install / bun install
+```
+
+### 3️⃣ Setup Environment Variables  
+Create a `.env` file in the **root** and add your Gemini API key:  
+```
+VITE_GEMINI_API_KEY=your_api_key_here
+MONGO_URI=your_mongodb_connection
+PORT=5000
+```
+
+### 4️⃣ Run the Project  
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🌍 Future Enhancements  
+🚧 Integration with **Google Calendar & Outlook** for syncing schedules  
+🚧 **Mobile app** for students to view updated timetables in real-time  
+🚧 Predictive analysis for **faculty workload trends**  
+🚧 **Voice AI Assistant** for querying schedules  
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🤝 Contribution  
+We welcome contributions! 🎉  
+- Fork the repo  
+- Create a feature branch (`git checkout -b feature-new`)  
+- Commit changes & raise PR  
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📜 License  
+MIT License © 2025 — EduFlex Team  
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1824cb41-c0e3-4c59-8aca-91eb69c25899) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+🔥 With **EduFlex**, colleges can finally say goodbye to chaotic timetables and hello to **intelligent, adaptive, and student-friendly schedules**.  
